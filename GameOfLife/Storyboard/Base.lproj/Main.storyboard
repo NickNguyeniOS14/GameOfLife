@@ -16,13 +16,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMk-9c-VRi">
+                                <rect key="frame" x="7" y="104" width="400" height="400"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Ee8-v1-YJa"/>
+                                    <constraint firstAttribute="height" constant="400" id="gaG-QC-eA9"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-t5-xCA">
+                                <rect key="frame" x="0.0" y="831" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Play" id="zFl-Jy-HnZ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0uY-cC-ndc"/>
+                                    <barButtonItem image="trash" catalog="system" id="vu7-AY-dB2"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Nqf-oA-CEH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMk-9c-VRi" secondAttribute="trailing" constant="7" id="XUG-rS-tHo"/>
+                            <constraint firstItem="2fd-t5-xCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bW0-QE-2OI"/>
+                            <constraint firstItem="2fd-t5-xCA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gEi-Qr-t34"/>
+                            <constraint firstAttribute="bottom" secondItem="2fd-t5-xCA" secondAttribute="bottom" constant="16" id="pvT-y7-HfL"/>
+                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="vPW-T1-QME"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Conway's Game Of Life" id="KaM-u3-3ab">
+                    <navigationItem key="navigationItem" title="Conway's Game Of Life" largeTitleDisplayMode="never" id="KaM-u3-3ab">
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="HCc-Hs-I0K">
                             <connections>
-                                <segue destination="3nJ-Lq-hkz" kind="show" id="YAS-mv-zaK"/>
+                                <segue destination="2D0-kD-dKr" kind="presentation" id="YAS-mv-zaK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -36,11 +62,11 @@
             <objects>
                 <viewController id="3nJ-Lq-hkz" customClass="AboutViewController" customModule="GameOfLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mXI-aC-g4v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-dd-g7Y">
-                                <rect key="frame" x="16" y="104" width="382" height="40"/>
+                                <rect key="frame" x="16" y="72" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ftb-dQ-yJ4"/>
                                 </constraints>
@@ -49,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Egk-oa-YhD">
-                                <rect key="frame" x="16" y="148" width="382" height="200"/>
+                                <rect key="frame" x="16" y="116" width="382" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Any live cell with fewer than two live neighbours dies, as if by underpopulation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-S8-XxI">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -81,7 +107,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this Algorithm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-SV-WVa">
-                                <rect key="frame" x="16" y="364" width="382" height="40"/>
+                                <rect key="frame" x="16" y="332" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Px-y0-D8z"/>
                                 </constraints>
@@ -90,11 +116,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu7-Qq-JkD">
-                                <rect key="frame" x="16" y="406" width="382" height="474"/>
+                                <rect key="frame" x="16" y="374" width="382" height="452"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <string key="text">The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.     </string>
+                                <mutableString key="text">The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. Early patterns with unknown futures, such as the R-pentomino, led computer programmers to write programs to track the evolution of patterns in the Game of Life. Most of the early algorithms were similar: they represented the patterns as two-dimensional arrays in computer memory. Typically, two arrays are used: one to hold the current generation, and one to calculate its successor. Often 0 and 1 represent dead and live cells, respectively.Alternatively, programmers may abandon the notion of representing the Game of Life field with a two-dimensional array, and use a different data structure, such as a vector of coordinate pairs representing live cells. This allows the pattern to move about the field unhindered, as long as the population does not exceed the size of the live-coordinate array. The drawback is that counting live neighbours becomes a hash-table lookup or search operation, slowing down simulation speed. With more sophisticated data structures this problem can also be largely solved.
+
+For exploring large patterns at great time depths, sophisticated algorithms such as Hashlife may be useful. There is also a method for implementation of the Game of Life and other cellular automata using arbitrary asynchronous updates whilst still exactly emulating the behaviour of the synchronous game.    </mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -116,19 +144,25 @@
                             <constraint firstItem="PmF-j2-WbX" firstAttribute="trailing" secondItem="rP6-dd-g7Y" secondAttribute="trailing" constant="16" id="wMa-oS-vdQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="TOt-6K-xKL"/>
+                    <navigationItem key="navigationItem" title="About" id="TOt-6K-xKL">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="RqQ-HI-uUX">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="3nJ-Lq-hkz" id="d25-AP-y0R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBt-GT-JMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540.5797101449277" y="107.8125"/>
+            <point key="canvasLocation" x="2447.826086956522" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mSi-Sh-kfU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CF5-lz-MX9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6SI-4g-NSQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6SI-4g-NSQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -140,9 +174,28 @@
             </objects>
             <point key="canvasLocation" x="-200.00000000000003" y="108.48214285714285"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Jj-tx-Mp2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2D0-kD-dKr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36v-gu-k0e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3nJ-Lq-hkz" kind="relationship" relationship="rootViewController" id="0O2-BF-GTI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnp-8e-FOa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5797101449277" y="107.8125"/>
+        </scene>
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="trash" catalog="system" width="118" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -151,6 +204,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
