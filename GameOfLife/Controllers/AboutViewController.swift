@@ -13,7 +13,4 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
-
 }
