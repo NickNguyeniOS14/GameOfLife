@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,31 +19,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMk-9c-VRi">
-                                <rect key="frame" x="7" y="104" width="400" height="400"/>
+                                <rect key="frame" x="4" y="92" width="406" height="735"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="Ee8-v1-YJa"/>
-                                    <constraint firstAttribute="height" constant="400" id="gaG-QC-eA9"/>
-                                </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-t5-xCA">
                                 <rect key="frame" x="0.0" y="831" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Play" id="zFl-Jy-HnZ"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0uY-cC-ndc"/>
-                                    <barButtonItem image="trash" catalog="system" id="vu7-AY-dB2"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="n9J-kG-XqX"/>
+                                    <barButtonItem id="AbP-ad-Ldn">
+                                        <imageReference key="image" image="arrow.backward.circle.fill" catalog="system" symbolScale="large"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cgw-TU-uad"/>
+                                    <barButtonItem id="zFl-Jy-HnZ">
+                                        <imageReference key="image" image="play.circle" catalog="system" symbolScale="large"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TBu-dX-dkz"/>
+                                    <barButtonItem id="vu7-AY-dB2">
+                                        <imageReference key="image" image="arrow.forward.circle.fill" catalog="system" symbolScale="large"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ai9-1W-g0R"/>
                                 </items>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Nqf-oA-CEH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMk-9c-VRi" secondAttribute="trailing" constant="7" id="XUG-rS-tHo"/>
+                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="2Xn-8j-eKB"/>
+                            <constraint firstItem="2fd-t5-xCA" firstAttribute="top" secondItem="ZMk-9c-VRi" secondAttribute="bottom" constant="4" id="BRZ-Nn-Jj8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMk-9c-VRi" secondAttribute="trailing" constant="4" id="JRa-9I-5Yd"/>
+                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="UDa-9Y-aWP"/>
                             <constraint firstItem="2fd-t5-xCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bW0-QE-2OI"/>
                             <constraint firstItem="2fd-t5-xCA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gEi-Qr-t34"/>
                             <constraint firstAttribute="bottom" secondItem="2fd-t5-xCA" secondAttribute="bottom" constant="16" id="pvT-y7-HfL"/>
-                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="vPW-T1-QME"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Conway's Game Of Life" largeTitleDisplayMode="never" id="KaM-u3-3ab">
@@ -194,8 +202,10 @@ For exploring large patterns at great time depths, sophisticated algorithms such
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="arrow.forward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="trash" catalog="system" width="118" height="128"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
