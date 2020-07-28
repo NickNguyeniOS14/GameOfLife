@@ -16,7 +16,6 @@ class GameViewController: UIViewController {
   @IBOutlet weak var gridView: GridView!
   
   
-  
   //MARK:- Life Cycle
   
   override func viewDidLoad() {
