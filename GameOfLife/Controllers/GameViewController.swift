@@ -12,7 +12,7 @@ class GameViewController: UIViewController {
   //MARK:- Properties
   private var buttons: [UIButton] = []
   
-  private lazy var buttonColor = UIColor.systemTeal {
+  private lazy var buttonColor = UIColor.link {
     didSet {
       gridUpdated()
     }
@@ -45,18 +45,19 @@ class GameViewController: UIViewController {
     if gridView.timerRunning {
       pauseGame()
     } else {
-      playButton.setBackgroundImage(UIImage(systemName: "pause"), for: .normal, barMetrics: .compact)
+      playButton.image = UIImage(systemName: "pause.circle")
+      
       gridView.startTimer()
     }
   }
   private func pauseGame() {
-    playButton.setBackgroundImage(UIImage(systemName: "play.circle"), for: .normal, barMetrics: .compact)
+    playButton.image = UIImage(systemName: "play.circle")
     gridView.cancelTimer()
   }
   private func setupButtons() {
     var index = 0
-    var topOffset = CGFloat(0)
-    var leadingOffset = CGFloat(0)
+    var topOffset: CGFloat = 0
+    var leadingOffset:CGFloat = 0
     
     for y in 0..<gridView.gameGrid.gridSize {
       for x in 0..<gridView.gameGrid.gridSize {
