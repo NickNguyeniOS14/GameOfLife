@@ -13,6 +13,9 @@ class GameViewController: UIViewController {
   
   @IBOutlet weak var generationLabel: UILabel!
   @IBOutlet weak var populationLabel: UILabel!
+  @IBOutlet weak var gridView: GridView!
+  
+  
   
   //MARK:- Life Cycle
   
@@ -20,9 +23,6 @@ class GameViewController: UIViewController {
     super.viewDidLoad()
     
   }
-  
-  
-  
   
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
     print("Menu")
@@ -43,10 +43,5 @@ class GameViewController: UIViewController {
   @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
     print("clear")
   }
-  
-  
-  
-  
- 
 }
 

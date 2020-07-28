@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol GameStatsDelegate {
+protocol GameStatsDelegate: AnyObject {
   func showGeneration()
   func showPopulation()
   func gridUpdated()

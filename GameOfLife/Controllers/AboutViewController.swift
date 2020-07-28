@@ -9,7 +9,6 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
-  
   @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
