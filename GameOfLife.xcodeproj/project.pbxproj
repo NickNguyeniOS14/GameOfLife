@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B62695EB24D09141004D1219 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EA24D09141004D1219 /* SettingViewController.swift */; };
+		B62695ED24D0932E004D1219 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EC24D0932E004D1219 /* Cell.swift */; };
 		B6E244B824CB92F1004E7C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E244B724CB92F1004E7C27 /* AppDelegate.swift */; };
 		B6E244BA24CB92F1004E7C27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E244B924CB92F1004E7C27 /* SceneDelegate.swift */; };
 		B6E244BC24CB92F1004E7C27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E244BB24CB92F1004E7C27 /* GameViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		B62695EA24D09141004D1219 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B62695EC24D0932E004D1219 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		B6E244B424CB92F1004E7C27 /* GameOfLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E244B724CB92F1004E7C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E244B924CB92F1004E7C27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62695EE24D09331004D1219 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B62695EC24D0932E004D1219 /* Cell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B6E244AB24CB92F1004E7C27 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B6E244E824CB9618004E7C27 /* Resources */,
+				B62695EE24D09331004D1219 /* Model */,
 				B6E244E924CB961F004E7C27 /* Controllers */,
 				B6E244E724CB960C004E7C27 /* Storyboard */,
 			);
@@ -293,6 +304,7 @@
 				B6E244B824CB92F1004E7C27 /* AppDelegate.swift in Sources */,
 				B6E244ED24CB969D004E7C27 /* AboutViewController.swift in Sources */,
 				B6E244BA24CB92F1004E7C27 /* SceneDelegate.swift in Sources */,
+				B62695ED24D0932E004D1219 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
