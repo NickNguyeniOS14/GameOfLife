@@ -106,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="831" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ysB-ce-PPV"/>
-                                    <barButtonItem title="Menu" id="Hwc-1x-kyl">
+                                    <barButtonItem title="Patterns" id="Hwc-1x-kyl">
                                         <connections>
                                             <action selector="menuButtonTapped:" destination="BYZ-38-t0r" id="M6V-2L-UWT"/>
                                         </connections>
@@ -196,6 +196,7 @@
                     <connections>
                         <outlet property="generationLabel" destination="eAt-8Z-aOd" id="PPM-aQ-VVF"/>
                         <outlet property="gridView" destination="ZMk-9c-VRi" id="oWh-Pn-Vtd"/>
+                        <outlet property="playButton" destination="AbP-ad-Ldn" id="Wv7-vg-gc4"/>
                         <outlet property="populationLabel" destination="1dT-QM-PQu" id="DHR-va-zBy"/>
                     </connections>
                 </viewController>

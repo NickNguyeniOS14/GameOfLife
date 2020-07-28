@@ -37,7 +37,7 @@ class GameGrid: NSObject {
     }
   }
   
-  func clearGrid() {
+  public func clearGrid() {
     cells.forEach { $0.state = .dead }
     generation = 0
     notifyDelegate()
@@ -55,8 +55,6 @@ class GameGrid: NSObject {
     }
     
   }
-  
- 
   
   private func cellAt(x: Int, y: Int) -> Cell {
     var absolutePosition: Int

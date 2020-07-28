@@ -8,7 +8,9 @@
 import UIKit
 
 class GridView: UIView {
-  //MARK:- Properties
+  
+  //MARK:- Properties-
+  
   var gameGrid = GameGrid(gridSize: 25)
   private var cellSize: Int = 15
   
@@ -17,6 +19,10 @@ class GridView: UIView {
   var timerRunning: Bool {
     timer == nil ? false : true
   }
+  
+  //MARK:- Initialization-
+  
+  
   
   public convenience init(gridSize: Int, cellSize: Int) {
     let frame = CGRect(x: 0, y: 0, width: cellSize * gridSize, height: cellSize * gridSize)
@@ -34,14 +40,42 @@ class GridView: UIView {
     super.init(frame: frame)
   }
   
-  //MARK: - Public interface
+  //MARK: - Public interface-
+  
+  
   public func cancelTimer() {
     timer?.invalidate()
     timer = nil
   }
   
   public func cellTapped(at index: Int) {
-    
+    gameGrid.cellTapped(at: index)
+    setNeedsDisplay()
   }
   
+  public func clearGrid() {
+    gameGrid.clearGrid()
+    setNeedsDisplay()
+  }
+  
+  
+  @objc private func performGameTurn() {
+    self.gameGrid.performGameTurn()
+    self.setNeedsDisplay()
+  }
+  
+  public func startTimer() {
+    timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(performGameTurn), userInfo: nil, repeats: true)
+  }
+  
+  public func step() {
+    gameGrid.performGameTurn()
+    setNeedsDisplay()
+  }
+  
+  public func useExamplePattern(pattern: Patterns) {
+    gameGrid.clearGrid()
+    gameGrid.userExamplePattern(pattern: pattern)
+    setNeedsDisplay()
+  }
 }
