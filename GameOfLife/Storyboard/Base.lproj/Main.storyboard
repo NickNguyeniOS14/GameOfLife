@@ -13,7 +13,7 @@
         <!--Settings-->
         <scene sceneID="e12-oK-hes">
             <objects>
-                <viewController id="y6X-mU-cSU" sceneMemberID="viewController">
+                <viewController id="y6X-mU-cSU" customClass="SettingViewController" customModule="GameOfLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4x-hp-cCD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,9 @@
                                             <segment title="0.75"/>
                                             <segment title="1.0"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="speedValueChanged:" destination="y6X-mU-cSU" eventType="valueChanged" id="yI0-gk-uTN"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE5-Xu-78b">
                                         <rect key="frame" x="0.0" y="104" width="382" height="44"/>
@@ -49,6 +52,9 @@
                                             <segment title="Green"/>
                                             <segment title="Yellow"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="buttonValueChanged:" destination="y6X-mU-cSU" eventType="valueChanged" id="ffZ-aa-dfp"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -65,8 +71,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="KTu-Fl-lYc">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="HkB-cg-igW"/>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="7Tp-7F-oHl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="HkB-cg-igW">
+                            <connections>
+                                <action selector="doneTapped:" destination="y6X-mU-cSU" id="Fte-lj-vkG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="7Tp-7F-oHl">
+                            <connections>
+                                <action selector="cancelTapped:" destination="y6X-mU-cSU" id="x9Y-RL-rbn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tC-E6-uo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,16 +106,30 @@
                                 <rect key="frame" x="0.0" y="831" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ysB-ce-PPV"/>
-                                    <barButtonItem title="Menu" id="Hwc-1x-kyl"/>
+                                    <barButtonItem title="Menu" id="Hwc-1x-kyl">
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="BYZ-38-t0r" id="M6V-2L-UWT"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n9J-kG-XqX"/>
                                     <barButtonItem id="AbP-ad-Ldn">
                                         <imageReference key="image" image="play.circle" catalog="system" symbolScale="large"/>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="BYZ-38-t0r" id="z5l-DV-imj"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cgw-TU-uad"/>
-                                    <barButtonItem title="Next" id="zFl-Jy-HnZ"/>
+                                    <barButtonItem title="Next" id="zFl-Jy-HnZ">
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="BYZ-38-t0r" id="pDL-XZ-yWL"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TBu-dX-dkz"/>
                                     <barButtonItem id="vu7-AY-dB2">
                                         <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" id="nir-bw-v5p"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ai9-1W-g0R"/>
                                 </items>
@@ -165,6 +193,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="generationLabel" destination="eAt-8Z-aOd" id="PPM-aQ-VVF"/>
+                        <outlet property="populationLabel" destination="1dT-QM-PQu" id="DHR-va-zBy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
