@@ -91,13 +91,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-M0-rbO">
                                 <rect key="frame" x="16" y="684" width="382" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed (in Seconds)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-BE-EoM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-BE-EoM">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="hare" catalog="system" maximumValueImage="tortoise" translatesAutoresizingMaskIntoConstraints="NO" id="TlJ-kV-hYq">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TlJ-kV-hYq" customClass="CustomSlider" customModule="GameOfLife" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="43" width="386" height="31"/>
                                         <connections>
                                             <action selector="animationSpeedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Tu-0m-WrL"/>
@@ -284,11 +284,9 @@ For exploring large patterns at great time depths, sophisticated algorithms such
         </scene>
     </scenes>
     <resources>
-        <image name="hare" catalog="system" width="128" height="92"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
-        <image name="tortoise" catalog="system" width="128" height="68"/>
         <image name="trash" catalog="system" width="118" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

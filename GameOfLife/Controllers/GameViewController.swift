@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
   
   
   @IBAction func animationSpeedChanged(_ sender: UISlider) {
-    gridView.timeInterval = TimeInterval(sender.value)
+    gridView.timeInterval = TimeInterval(1.0) -  TimeInterval(sender.value) // Reverse slider min - max 
   }
 
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
