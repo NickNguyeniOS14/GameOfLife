@@ -164,13 +164,10 @@ extension GameViewController: GameStatsDelegate {
 }
 @available(iOS 14.0, *)
 extension GameViewController: UIColorPickerViewControllerDelegate {
-  
-  func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-    //
-    print("Hello theere")
-  }
+
   func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
-    //
-    print("Hello")
+    
+    defaultButtonsColor = viewController.selectedColor
+
   }
 }
