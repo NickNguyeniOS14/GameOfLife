@@ -13,14 +13,11 @@ class GridView: UIView {
   
   var gameGrid = GameGrid(gridSize: 25)
   private var cellSize: Int = 15
-  
   private var timer: Timer?
   private(set) var timeInterval = 0.25
   var timerRunning: Bool { timer == nil ? false : true }
   
   //MARK:- Initialization-
-  
-  
   
   public convenience init(gridSize: Int, cellSize: Int) {
     let frame = CGRect(x: 0, y: 0, width: cellSize * gridSize, height: cellSize * gridSize)
@@ -29,17 +26,16 @@ class GridView: UIView {
     self.gameGrid = GameGrid(gridSize: gridSize)
     self.cellSize = cellSize
   }
+  
   public required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
-  
   
   public override init(frame: CGRect) {
     super.init(frame: frame)
   }
   
   //MARK: - Public interface-
-  
   
   public func cancelTimer() {
     timer?.invalidate()
@@ -55,7 +51,6 @@ class GridView: UIView {
     gameGrid.clearGrid()
     setNeedsDisplay()
   }
-  
   
   @objc private func performGameTurn() {
     self.gameGrid.performGameTurn()

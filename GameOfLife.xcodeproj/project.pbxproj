@@ -132,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				B62695F124D09443004D1219 /* Protocol */,
-				B6E244E824CB9618004E7C27 /* Resources */,
 				B62695EE24D09331004D1219 /* Model */,
-				B6E244E924CB961F004E7C27 /* Controllers */,
 				B6E244E724CB960C004E7C27 /* Views */,
+				B6E244E924CB961F004E7C27 /* Controllers */,
+				B6E244E824CB9618004E7C27 /* Resources */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";

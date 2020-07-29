@@ -7,9 +7,11 @@
 
 import UIKit
 
+@available(iOS 14.0, *)
 class GameViewController: UIViewController {
   
-  //MARK:- Properties
+  //MARK:- Properties-
+  
   private var buttons: [UIButton] = []
   
   private lazy var defaultButtonsColor = UIColor.link {
@@ -18,14 +20,22 @@ class GameViewController: UIViewController {
     }
   }
   
-  //MARK:- IBOutlets
+  private(set) lazy var colorPickerViewController: UIColorPickerViewController = {
+    let picker = UIColorPickerViewController()
+    picker.title = "Cell Color Setting"
+    picker.delegate = self
+    return picker
+  }()
+  
+  
+  //MARK:- IBOutlets-
   
   @IBOutlet weak var generationLabel: UILabel!
   @IBOutlet weak var populationLabel: UILabel!
   @IBOutlet weak var gridView: GridView!
   @IBOutlet weak var playButton: UIBarButtonItem!
   
-  //MARK:- Life Cycle
+  //MARK:- Life Cycle-
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,8 +46,31 @@ class GameViewController: UIViewController {
     didUpdateGrid()
   }
   
+  //MARK:- IBActions-
+  
+  
+  @IBAction func colorSettingTapped(_ sender: UIBarButtonItem) {
+    self.present(colorPickerViewController, animated: true, completion: nil)
+  }
+  
+  
+  @IBAction func animationSpeedChanged(_ sender: UISegmentedControl) {
+    print(sender.selectedSegmentIndex)
+  }
+  
+  
+  
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
     print("Menu")
+    let alertController = UIAlertController(title: "Example Patterns", message: "Select a Game of Life pattern", preferredStyle: .alert)
+    alertController.addAction(UIAlertAction(title: "Random Pattern", style: .default, handler: { (_) in
+      self.gridView.useExamplePattern(pattern: .random)
+    }))
+    alertController.addAction(UIAlertAction(title: "Pulsar", style: .default, handler: { (_) in
+      self.gridView.useExamplePattern(pattern: .pulsar)
+    }))
+    alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+    present(alertController, animated: true, completion: nil)
   }
   
   
@@ -67,7 +100,7 @@ class GameViewController: UIViewController {
         button.tag = index
         
         
-        button.backgroundColor = .clear
+        button.backgroundColor = UIColor.clear
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.systemGray6.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -98,16 +131,20 @@ class GameViewController: UIViewController {
   
   @IBAction func nextButtonTapped(_ sender: UIBarButtonItem) {
     print("Next")
+    gridView.step()
   }
   
   
   @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
     print("clear")
+    gridView.cancelTimer()
+    gridView.gameGrid.clearGrid()
   }
 }
 
 
 
+@available(iOS 14.0, *)
 extension GameViewController: GameStatsDelegate {
   func didUpdateGeneration() {
     generationLabel.text = "\(gridView.gameGrid.generation)"
@@ -120,8 +157,20 @@ extension GameViewController: GameStatsDelegate {
   func didUpdateGrid() {
     var index = 0
     gridView.gameGrid.cells.forEach {
-      buttons[index].backgroundColor = $0.state == .alive ? defaultButtonsColor : .clear
+      buttons[index].backgroundColor = $0.state == .alive ? defaultButtonsColor : UIColor.clear
       index += 1
     }
+  }
+}
+@available(iOS 14.0, *)
+extension GameViewController: UIColorPickerViewControllerDelegate {
+  
+  func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+    //
+    print("Hello theere")
+  }
+  func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+    //
+    print("Hello")
   }
 }

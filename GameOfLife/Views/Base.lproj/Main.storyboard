@@ -10,83 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="e12-oK-hes">
-            <objects>
-                <viewController id="y6X-mU-cSU" customClass="SettingViewController" customModule="GameOfLife" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a4x-hp-cCD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h9s-7l-SVW">
-                                <rect key="frame" x="16" y="72" width="382" height="200"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed (in Seconds)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-cY-7rF">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rd8-3A-p6C">
-                                        <rect key="frame" x="0.0" y="52" width="382" height="45"/>
-                                        <segments>
-                                            <segment title="0.25"/>
-                                            <segment title="0.50"/>
-                                            <segment title="0.75"/>
-                                            <segment title="1.0"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="speedValueChanged:" destination="y6X-mU-cSU" eventType="valueChanged" id="yI0-gk-uTN"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE5-Xu-78b">
-                                        <rect key="frame" x="0.0" y="104" width="382" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-NA-EUW">
-                                        <rect key="frame" x="0.0" y="156" width="382" height="45"/>
-                                        <segments>
-                                            <segment title="Teal"/>
-                                            <segment title="Green"/>
-                                            <segment title="Yellow"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="buttonValueChanged:" destination="y6X-mU-cSU" eventType="valueChanged" id="ffZ-aa-dfp"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="9YW-bu-AtO"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="DM3-Gr-oVZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="h9s-7l-SVW" firstAttribute="top" secondItem="DM3-Gr-oVZ" secondAttribute="top" constant="16" id="09d-QO-nQz"/>
-                            <constraint firstItem="h9s-7l-SVW" firstAttribute="leading" secondItem="DM3-Gr-oVZ" secondAttribute="leading" constant="16" id="HII-vK-rck"/>
-                            <constraint firstItem="DM3-Gr-oVZ" firstAttribute="trailing" secondItem="h9s-7l-SVW" secondAttribute="trailing" constant="16" id="L4z-DO-aJ3"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="KTu-Fl-lYc">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="HkB-cg-igW">
-                            <connections>
-                                <action selector="doneTapped:" destination="y6X-mU-cSU" id="Fte-lj-vkG"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="7Tp-7F-oHl">
-                            <connections>
-                                <action selector="cancelTapped:" destination="y6X-mU-cSU" id="x9Y-RL-rbn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7tC-E6-uo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1620.289855072464" y="-563.16964285714278"/>
-        </scene>
         <!--Conway's Game Of Life-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -165,15 +88,41 @@
                                     <constraint firstAttribute="height" constant="140" id="48X-lv-4PX"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-M0-rbO">
+                                <rect key="frame" x="16" y="684" width="382" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed (in Seconds)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-BE-EoM">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YPG-XQ-zkD">
+                                        <rect key="frame" x="0.0" y="43" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="0.25"/>
+                                            <segment title="0.50"/>
+                                            <segment title="0.75"/>
+                                            <segment title="1.0"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="animationSpeedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PKH-zg-aia"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Vw-M0-rbO" secondAttribute="trailing" constant="16" id="45V-18-Goc"/>
+                            <constraint firstItem="3Vw-M0-rbO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8eW-tc-eCe"/>
                             <constraint firstItem="ZMk-9c-VRi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="IzH-OQ-UKJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6b-9J-sgQ" secondAttribute="trailing" constant="16" id="Nzq-mc-fEP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMk-9c-VRi" secondAttribute="trailing" constant="20" id="PUl-Fu-L1C"/>
                             <constraint firstItem="ZMk-9c-VRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="W8u-sD-BmO"/>
                             <constraint firstItem="2fd-t5-xCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bW0-QE-2OI"/>
+                            <constraint firstItem="3Vw-M0-rbO" firstAttribute="top" secondItem="Y6b-9J-sgQ" secondAttribute="bottom" constant="16" id="ch4-Ku-jKu"/>
                             <constraint firstItem="Y6b-9J-sgQ" firstAttribute="top" secondItem="ZMk-9c-VRi" secondAttribute="bottom" constant="20" id="enk-gj-Hgp"/>
                             <constraint firstItem="2fd-t5-xCA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gEi-Qr-t34"/>
                             <constraint firstItem="Y6b-9J-sgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="n7G-EW-iNO"/>
@@ -181,9 +130,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Conway's Game Of Life" largeTitleDisplayMode="never" id="KaM-u3-3ab">
-                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="znv-k9-leQ">
+                        <barButtonItem key="leftBarButtonItem" image="highlighter" catalog="system" id="znv-k9-leQ">
                             <connections>
-                                <segue destination="Avg-6f-TdE" kind="presentation" id="07w-ke-rmi"/>
+                                <action selector="colorSettingTapped:" destination="BYZ-38-t0r" id="mhU-Gt-X75"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="HCc-Hs-I0K">
@@ -338,28 +287,10 @@ For exploring large patterns at great time depths, sophisticated algorithms such
             </objects>
             <point key="canvasLocation" x="1568" y="108"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="emS-RL-dc2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Avg-6f-TdE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AQL-u7-lhO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="y6X-mU-cSU" kind="relationship" relationship="rootViewController" id="rKY-cy-dkj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OnW-FZ-Evt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="713.04347826086962" y="-563.16964285714278"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="118" height="128"/>
         <systemColor name="labelColor">

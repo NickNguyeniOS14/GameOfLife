@@ -7,27 +7,24 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+@available(iOS 14.0, *)
+class SettingViewController: UIColorPickerViewController {
   
   
   @IBAction func doneTapped(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
   
-  
-  
   @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
     
   }
   
-  
   @IBAction func speedValueChanged(_ sender: UISegmentedControl) {
   }
   
+
   
-  @IBAction func buttonValueChanged(_ sender: UISegmentedControl) {
-  }
   
   
   override func viewDidLoad() {
