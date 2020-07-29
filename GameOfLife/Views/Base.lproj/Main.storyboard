@@ -89,7 +89,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-M0-rbO">
-                                <rect key="frame" x="16" y="684" width="382" height="74"/>
+                                <rect key="frame" x="16" y="684" width="382" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed (in Seconds)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-BE-EoM">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -97,18 +97,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YPG-XQ-zkD">
-                                        <rect key="frame" x="0.0" y="43" width="382" height="32"/>
-                                        <segments>
-                                            <segment title="0.25"/>
-                                            <segment title="0.50"/>
-                                            <segment title="0.75"/>
-                                            <segment title="1.0"/>
-                                        </segments>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="hare" catalog="system" maximumValueImage="tortoise" translatesAutoresizingMaskIntoConstraints="NO" id="TlJ-kV-hYq">
+                                        <rect key="frame" x="-2" y="43" width="386" height="31"/>
                                         <connections>
-                                            <action selector="animationSpeedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PKH-zg-aia"/>
+                                            <action selector="animationSpeedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Tu-0m-WrL"/>
                                         </connections>
-                                    </segmentedControl>
+                                    </slider>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -146,6 +140,7 @@
                         <outlet property="gridView" destination="ZMk-9c-VRi" id="oWh-Pn-Vtd"/>
                         <outlet property="playButton" destination="AbP-ad-Ldn" id="Wv7-vg-gc4"/>
                         <outlet property="populationLabel" destination="1dT-QM-PQu" id="DHR-va-zBy"/>
+                        <outlet property="sliderOutlet" destination="TlJ-kV-hYq" id="tdY-gr-I5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -289,9 +284,11 @@ For exploring large patterns at great time depths, sophisticated algorithms such
         </scene>
     </scenes>
     <resources>
+        <image name="hare" catalog="system" width="128" height="92"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="tortoise" catalog="system" width="128" height="68"/>
         <image name="trash" catalog="system" width="118" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -14,11 +14,7 @@ class GameViewController: UIViewController {
   
   private var buttons: [UIButton] = []
   
-  private lazy var defaultButtonsColor = UIColor.link {
-    didSet {
-      didUpdateGrid()
-    }
-  }
+  private lazy var defaultButtonsColor = UIColor.link { didSet { didUpdateGrid() }  }
   
   private(set) lazy var colorPickerViewController: UIColorPickerViewController = {
     let picker = UIColorPickerViewController()
@@ -27,13 +23,14 @@ class GameViewController: UIViewController {
     return picker
   }()
   
-  
   //MARK:- IBOutlets-
   
   @IBOutlet weak var generationLabel: UILabel!
   @IBOutlet weak var populationLabel: UILabel!
   @IBOutlet weak var gridView: GridView!
   @IBOutlet weak var playButton: UIBarButtonItem!
+  @IBOutlet weak var sliderOutlet: UISlider!
+  
   
   //MARK:- Life Cycle-
   
@@ -54,12 +51,10 @@ class GameViewController: UIViewController {
   }
   
   
-  @IBAction func animationSpeedChanged(_ sender: UISegmentedControl) {
-    print(sender.selectedSegmentIndex)
+  @IBAction func animationSpeedChanged(_ sender: UISlider) {
+    gridView.timeInterval = TimeInterval(sender.value)
   }
-  
-  
-  
+
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
     print("Menu")
     let alertController = UIAlertController(title: "Example Patterns", message: "Select a Game of Life pattern", preferredStyle: .alert)
@@ -77,10 +72,12 @@ class GameViewController: UIViewController {
   @IBAction func playButtonTapped(_ sender: UIBarButtonItem) {
     if gridView.timerRunning {
       pauseGame()
+      sliderOutlet.isEnabled = true
     } else {
       playButton.image = UIImage(systemName: "pause.circle")
-      
+      sliderOutlet.isEnabled = false
       gridView.startTimer()
+      
     }
   }
   private func pauseGame() {
@@ -141,8 +138,6 @@ class GameViewController: UIViewController {
     gridView.gameGrid.clearGrid()
   }
 }
-
-
 
 @available(iOS 14.0, *)
 extension GameViewController: GameStatsDelegate {

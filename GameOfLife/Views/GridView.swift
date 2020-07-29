@@ -14,7 +14,7 @@ class GridView: UIView {
   var gameGrid = GameGrid(gridSize: 25)
   private var cellSize: Int = 15
   private var timer: Timer?
-  private(set) var timeInterval = 0.25
+  var timeInterval = 0.25
   var timerRunning: Bool { timer == nil ? false : true }
   
   //MARK:- Initialization-

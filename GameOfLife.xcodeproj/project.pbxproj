@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B62695EB24D09141004D1219 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EA24D09141004D1219 /* SettingViewController.swift */; };
 		B62695ED24D0932E004D1219 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EC24D0932E004D1219 /* Cell.swift */; };
 		B62695F024D093CD004D1219 /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EF24D093CD004D1219 /* GameGrid.swift */; };
 		B62695F324D09459004D1219 /* GameStatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695F224D09459004D1219 /* GameStatsDelegate.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B62695EA24D09141004D1219 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B62695EC24D0932E004D1219 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		B62695EF24D093CD004D1219 /* GameGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
 		B62695F224D09459004D1219 /* GameStatsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				B6E244BB24CB92F1004E7C27 /* GameViewController.swift */,
 				B6E244EC24CB969D004E7C27 /* AboutViewController.swift */,
-				B62695EA24D09141004D1219 /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62695EB24D09141004D1219 /* SettingViewController.swift in Sources */,
 				B6E244BC24CB92F1004E7C27 /* GameViewController.swift in Sources */,
 				B6E244B824CB92F1004E7C27 /* AppDelegate.swift in Sources */,
 				B62695F024D093CD004D1219 /* GameGrid.swift in Sources */,
