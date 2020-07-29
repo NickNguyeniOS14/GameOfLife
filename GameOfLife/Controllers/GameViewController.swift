@@ -57,14 +57,14 @@ class GameViewController: UIViewController {
 
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
     print("Menu")
-    let alertController = UIAlertController(title: "Example Patterns", message: "Select a Game of Life pattern", preferredStyle: .alert)
+    let alertController = UIAlertController(title: "Example Patterns", message: "Select a Game of Life pattern", preferredStyle: .actionSheet)
     alertController.addAction(UIAlertAction(title: "Random Pattern", style: .default, handler: { (_) in
       self.gridView.useExamplePattern(pattern: .random)
     }))
     alertController.addAction(UIAlertAction(title: "Pulsar", style: .default, handler: { (_) in
       self.gridView.useExamplePattern(pattern: .pulsar)
     }))
-    alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+    alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
     present(alertController, animated: true, completion: nil)
   }
   
