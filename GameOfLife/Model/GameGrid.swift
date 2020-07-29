@@ -166,8 +166,8 @@ class GameGrid: NSObject {
   }
   
   private func notifyDelegate() {
-    delegate?.showGeneration()
-    delegate?.showPopulation()
-    delegate?.gridUpdated()
+    delegate?.didUpdateGeneration()
+    delegate?.didUpdatePopulation()
+    delegate?.didUpdateGrid()
   }
 }

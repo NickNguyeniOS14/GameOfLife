@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+  
   
   @IBAction func doneTapped(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
@@ -30,9 +30,9 @@ class SettingViewController: UIViewController {
   }
   
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-       
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+  }
 }

@@ -12,9 +12,9 @@ class GameViewController: UIViewController {
   //MARK:- Properties
   private var buttons: [UIButton] = []
   
-  private lazy var buttonColor = UIColor.link {
+  private lazy var defaultButtonsColor = UIColor.link {
     didSet {
-      gridUpdated()
+      didUpdateGrid()
     }
   }
   
@@ -31,9 +31,9 @@ class GameViewController: UIViewController {
     super.viewDidLoad()
     setupButtons()
     gridView.gameGrid.delegate = self
-    showGeneration()
-    showPopulation()
-    gridUpdated()
+    didUpdateGeneration()
+    didUpdatePopulation()
+    didUpdateGrid()
   }
   
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
@@ -62,9 +62,10 @@ class GameViewController: UIViewController {
     for y in 0..<gridView.gameGrid.gridSize {
       for x in 0..<gridView.gameGrid.gridSize {
         print(index, x, y)
+        index += 1
         let button = UIButton()
         button.tag = index
-        index += 1
+        
         
         button.backgroundColor = .clear
         button.layer.borderWidth = 0.5
@@ -108,18 +109,18 @@ class GameViewController: UIViewController {
 
 
 extension GameViewController: GameStatsDelegate {
-  func showGeneration() {
+  func didUpdateGeneration() {
     generationLabel.text = "\(gridView.gameGrid.generation)"
   }
   
-  func showPopulation() {
+  func didUpdatePopulation() {
     populationLabel.text = "\(gridView.gameGrid.population)"
   }
   
-  func gridUpdated() {
+  func didUpdateGrid() {
     var index = 0
     gridView.gameGrid.cells.forEach {
-      buttons[index].backgroundColor = $0.state == .alive ? buttonColor : .clear
+      buttons[index].backgroundColor = $0.state == .alive ? defaultButtonsColor : .clear
       index += 1
     }
   }

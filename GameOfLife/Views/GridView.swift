@@ -15,10 +15,8 @@ class GridView: UIView {
   private var cellSize: Int = 15
   
   private var timer: Timer?
-  var timeInterval = 0.25
-  var timerRunning: Bool {
-    timer == nil ? false : true
-  }
+  private(set) var timeInterval = 0.25
+  var timerRunning: Bool { timer == nil ? false : true }
   
   //MARK:- Initialization-
   
