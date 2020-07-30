@@ -11,7 +11,7 @@ class GridView: UIView {
   
   //MARK:- Properties-
   
-  var gameGrid = GameGrid(gridSize: 25)
+  var gameGrid = GameEngine(gridSize: 25)
   private var cellSize: Int = 15
   private var timer: Timer?
   var timeInterval = 0.25
@@ -23,7 +23,7 @@ class GridView: UIView {
     let frame = CGRect(x: 0, y: 0, width: cellSize * gridSize, height: cellSize * gridSize)
     self.init(frame:frame)
     
-    self.gameGrid = GameGrid(gridSize: gridSize)
+    self.gameGrid = GameEngine(gridSize: gridSize)
     self.cellSize = cellSize
   }
   

@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
   
   private var buttons: [UIButton] = []
   
-  private lazy var defaultButtonsColor = UIColor.link { didSet { didUpdateGrid() }  }
+  private lazy var defaultButtonsColor = UIColor.black { didSet { didUpdateGrid() }  }
   
   private(set) lazy var colorPickerViewController: UIColorPickerViewController = {
     let picker = UIColorPickerViewController()
@@ -54,16 +54,25 @@ class GameViewController: UIViewController {
   @IBAction func animationSpeedChanged(_ sender: UISlider) {
     gridView.timeInterval = TimeInterval(1.0) -  TimeInterval(sender.value) // Reverse slider min - max 
   }
-
+  
   @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
     print("Menu")
     let alertController = UIAlertController(title: "Example Patterns", message: "Select a Game of Life pattern", preferredStyle: .actionSheet)
-    alertController.addAction(UIAlertAction(title: "Random Pattern", style: .default, handler: { (_) in
+    alertController.addAction(UIAlertAction(title: "Randomize", style: .default, handler: { (_) in
       self.gridView.useExamplePattern(pattern: .random)
     }))
     alertController.addAction(UIAlertAction(title: "Pulsar", style: .default, handler: { (_) in
       self.gridView.useExamplePattern(pattern: .pulsar)
     }))
+    alertController.addAction(UIAlertAction(title: "Glider", style: .default) { _ in
+      self.gridView.useExamplePattern(pattern: .glider)
+    })
+    alertController.addAction(UIAlertAction(title: "Blinker", style: .default) { _ in
+      self.gridView.useExamplePattern(pattern: .blinker)
+    })
+    alertController.addAction(UIAlertAction(title: "Lightweight Spaceship", style: .default) { _ in
+      self.gridView.useExamplePattern(pattern: .lightWeightSpaceship)
+    })
     alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
     present(alertController, animated: true, completion: nil)
   }
@@ -97,11 +106,11 @@ class GameViewController: UIViewController {
         button.tag = index
         
         
-        button.backgroundColor = UIColor.clear
+        //        button.backgroundColor = UIColor.clear
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.systemGray6.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(cellButtonTapped), for: .touchUpInside)
         
         gridView.addSubview(button)
         
@@ -121,7 +130,7 @@ class GameViewController: UIViewController {
       topOffset += 15
     }
   }
-  @objc private func buttonTapped(_ sender: UIButton) {
+  @objc private func cellButtonTapped(_ sender: UIButton) {
     print(sender.tag)
     gridView.cellTapped(at: sender.tag)
   }
@@ -159,10 +168,10 @@ extension GameViewController: GameStatsDelegate {
 }
 @available(iOS 14.0, *)
 extension GameViewController: UIColorPickerViewControllerDelegate {
-
+  
   func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
     
     defaultButtonsColor = viewController.selectedColor
-
+    
   }
 }

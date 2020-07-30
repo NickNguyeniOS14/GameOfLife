@@ -14,4 +14,5 @@ public enum Patterns {
   
   // Spaceships
   case glider
+  case lightWeightSpaceship
 }

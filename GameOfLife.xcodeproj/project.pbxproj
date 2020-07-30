@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B62695ED24D0932E004D1219 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EC24D0932E004D1219 /* Cell.swift */; };
-		B62695F024D093CD004D1219 /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EF24D093CD004D1219 /* GameGrid.swift */; };
+		B62695F024D093CD004D1219 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695EF24D093CD004D1219 /* GameEngine.swift */; };
 		B62695F324D09459004D1219 /* GameStatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695F224D09459004D1219 /* GameStatsDelegate.swift */; };
 		B62695F524D09663004D1219 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62695F424D09663004D1219 /* GridView.swift */; };
 		B63547A324D1DCEE00B9930D /* Patterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63547A224D1DCEE00B9930D /* Patterns.swift */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		B62695EC24D0932E004D1219 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		B62695EF24D093CD004D1219 /* GameGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
+		B62695EF24D093CD004D1219 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		B62695F224D09459004D1219 /* GameStatsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsDelegate.swift; sourceTree = "<group>"; };
 		B62695F424D09663004D1219 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		B63547A224D1DCEE00B9930D /* Patterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patterns.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B62695EC24D0932E004D1219 /* Cell.swift */,
-				B62695EF24D093CD004D1219 /* GameGrid.swift */,
+				B62695EF24D093CD004D1219 /* GameEngine.swift */,
 				B63547A224D1DCEE00B9930D /* Patterns.swift */,
 			);
 			path = Model;
@@ -322,7 +322,7 @@
 				B6E244BC24CB92F1004E7C27 /* GameViewController.swift in Sources */,
 				B63547A524D1FB9700B9930D /* CustomSlider.swift in Sources */,
 				B6E244B824CB92F1004E7C27 /* AppDelegate.swift in Sources */,
-				B62695F024D093CD004D1219 /* GameGrid.swift in Sources */,
+				B62695F024D093CD004D1219 /* GameEngine.swift in Sources */,
 				B63547A324D1DCEE00B9930D /* Patterns.swift in Sources */,
 				B6E244ED24CB969D004E7C27 /* AboutViewController.swift in Sources */,
 				B6E244BA24CB92F1004E7C27 /* SceneDelegate.swift in Sources */,

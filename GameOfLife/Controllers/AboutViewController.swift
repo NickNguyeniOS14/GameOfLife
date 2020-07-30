@@ -12,10 +12,4 @@ class AboutViewController: UIViewController {
   @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
-  
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-  }
 }

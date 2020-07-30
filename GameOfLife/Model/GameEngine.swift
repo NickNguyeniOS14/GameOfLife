@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameGrid: NSObject {
+class GameEngine: NSObject {
   
   let gridSize: Int
   var cells: [Cell] = []
@@ -18,7 +18,7 @@ class GameGrid: NSObject {
   public init(gridSize: Int) {
     self.gridSize = gridSize
     
-    // Create grid ttt
+    
     for y in 0..<self.gridSize {
       for x in 0..<self.gridSize {
         let cell = Cell(x: x, y: y)
@@ -29,7 +29,6 @@ class GameGrid: NSObject {
     super.init()
     self.userExamplePattern(pattern: .random)
   }
-  
   
   private func randomizeGrid() {
     cells.forEach {
@@ -123,6 +122,30 @@ class GameGrid: NSObject {
         cellAt(x: 12, y: 15).state = .alive
         cellAt(x: 12, y: 16).state = .alive
         cellAt(x: 11, y: 14).state = .alive
+        
+      case .glider:
+        cellAt(x: 3, y: 2).state = .alive
+        cellAt(x: 4, y: 3).state = .alive
+        cellAt(x: 4, y: 4).state = .alive
+        cellAt(x: 3, y: 4).state = .alive
+        cellAt(x: 2, y: 4).state = .alive
+      case .blinker:
+        cellAt(x: 11, y: 12).state = .alive
+        cellAt(x: 12, y: 12).state = .alive
+        cellAt(x: 13, y: 12).state = .alive
+      case .lightWeightSpaceship:
+        cellAt(x: 12, y: 12).state = .alive
+        cellAt(x: 13, y: 12).state = .alive
+        cellAt(x: 14, y: 12).state = .alive
+        cellAt(x: 15, y: 12).state = .alive
+        
+        cellAt(x: 12, y: 11).state = .alive
+        cellAt(x: 16, y: 11).state = .alive
+        
+        cellAt(x: 12, y: 10).state = .alive
+        
+        cellAt(x: 13, y: 9).state = .alive
+        cellAt(x: 16, y: 9).state = .alive
       default:
         break
     }
@@ -139,17 +162,20 @@ class GameGrid: NSObject {
     
   }
   
-  func cellCoordinates(index: Int) -> (x: Int, y: Int) {
+  func cellCoordinates(at index: Int) -> (x: Int, y: Int) {
     var y = 0
     var x = 0
     
     y = index / gridSize
+   
     x = index - (y * gridSize)
+   
     return (x,y)
     
   }
   
   func cellTapped(at index: Int) {
+    
     if cells[index].state == .alive {
       cells[index].state = .dead
     } else {
@@ -158,84 +184,90 @@ class GameGrid: NSObject {
     notifyDelegate()
   }
   
+  //MARK:-
   func performGameTurn() {
     var index = 0
     var cellsToKill: [Cell] = []
     var cellsToBirth: [Cell] = []
     
-    
+  
     for cell in cells {
-      var count = 0
-      let coordinates = cellCoordinates(index: index)
+      var liveNeighbours = 0
+      let coordinates = cellCoordinates(at: index)
       
       // West
       if coordinates.x != 0 {
         if cellAt(x: coordinates.x - 1, y: coordinates.y).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       // North West
       if coordinates.x != 0 && coordinates.y != 0 {
         if cellAt(x: coordinates.x - 1, y: coordinates.y - 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
       // North
       if coordinates.y != 0 {
         if cellAt(x: coordinates.x, y: coordinates.y - 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       // North East
       if coordinates.x < (gridSize - 1) && coordinates.y != 0 {
         if cellAt(x: coordinates.x + 1, y: coordinates.y - 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
       // East
       if coordinates.x < (gridSize - 1) {
         if cellAt(x: coordinates.x + 1, y: coordinates.y).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
       // South East
       if coordinates.x < (gridSize - 1) && coordinates.y < (gridSize - 1) {
         if cellAt(x: coordinates.x + 1, y: coordinates.y + 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
       // South
       if coordinates.y < (gridSize - 1) {
         if cellAt(x: coordinates.x, y: coordinates.y + 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
       // South West
       if coordinates.x != 0 && coordinates.y < (gridSize - 1) {
         if cellAt(x: coordinates.x - 1, y: coordinates.y + 1).state == .alive {
-          count += 1
+          liveNeighbours += 1
         }
       }
       
-      if cell.state == .alive {
-        if count < 2 || count > 3 {
+  
+      switch cell.state {
+        case .alive where liveNeighbours < 2 || liveNeighbours > 3:
+          // If the cell is alive and has 2 or 3 neighbors, then it remains alive. Else it dies.
+         
           cellsToKill.append(cell)
-        }
-      } else { // cell.state == .dead
-        if count == 3 {
+        case .dead where liveNeighbours == 3:
+          // If the cell is dead and has exactly 3 neighbors, then it comes to life. Else if remains dead.
+         
           cellsToBirth.append(cell)
-        }
+        default:
+          break
       }
-      index += 1
       
+      index += 1
+     
     }
-    cellsToKill.forEach { $0.state = .dead }
-    cellsToBirth.forEach { $0.state = .alive }
+    cellsToKill.forEach { $0.state = .dead } // Kill the cell
+    cellsToBirth.forEach { $0.state = .alive } // Birth the cell
     generation += 1
     notifyDelegate()
   }
