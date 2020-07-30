@@ -129,6 +129,15 @@ class GameEngine: NSObject {
         cellAt(x: 4, y: 4).state = .alive
         cellAt(x: 3, y: 4).state = .alive
         cellAt(x: 2, y: 4).state = .alive
+      case .behive:
+        cellAt(x: 3, y: 2).state = .alive
+        cellAt(x: 4, y: 2).state = .alive
+        
+        cellAt(x: 2, y: 3).state = .alive
+        cellAt(x: 5, y: 3).state = .alive
+        
+        cellAt(x: 3, y: 4).state = .alive
+        cellAt(x: 4, y: 4).state = .alive
       case .blinker:
         cellAt(x: 11, y: 12).state = .alive
         cellAt(x: 12, y: 12).state = .alive
@@ -146,8 +155,7 @@ class GameEngine: NSObject {
         
         cellAt(x: 13, y: 9).state = .alive
         cellAt(x: 16, y: 9).state = .alive
-      default:
-        break
+     
     }
     generation = 0
     notifyDelegate()
@@ -158,7 +166,7 @@ class GameEngine: NSObject {
     var absolutePosition: Int
     // 3,2 on 25 x 25 grid
     absolutePosition = (y * gridSize) + x
-    return cells[absolutePosition]
+    return cells[absolutePosition]  
     
   }
   

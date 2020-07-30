@@ -73,6 +73,9 @@ class GameViewController: UIViewController {
     alertController.addAction(UIAlertAction(title: "Lightweight Spaceship", style: .default) { _ in
       self.gridView.useExamplePattern(pattern: .lightWeightSpaceship)
     })
+    alertController.addAction(UIAlertAction(title: "Behive", style: .default) { _ in
+      self.gridView.useExamplePattern(pattern: .behive)
+    })
     alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
     present(alertController, animated: true, completion: nil)
   }
@@ -104,9 +107,6 @@ class GameViewController: UIViewController {
         index += 1
         let button = UIButton()
         button.tag = index
-        
-        
-        //        button.backgroundColor = UIColor.clear
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.systemGray6.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false

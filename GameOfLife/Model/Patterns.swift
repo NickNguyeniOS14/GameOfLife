@@ -7,10 +7,7 @@ public enum Patterns {
   
   // Oscillators
   case blinker
-  case toad
-  case beacon
   case pulsar
-  case pentadecathlon
   
   // Spaceships
   case glider
