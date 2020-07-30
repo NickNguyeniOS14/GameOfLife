@@ -73,8 +73,8 @@ class GameViewController: UIViewController {
     alertController.addAction(UIAlertAction(title: "Lightweight Spaceship", style: .default) { _ in
       self.gridView.useExamplePattern(pattern: .lightWeightSpaceship)
     })
-    alertController.addAction(UIAlertAction(title: "Behive", style: .default) { _ in
-      self.gridView.useExamplePattern(pattern: .behive)
+    alertController.addAction(UIAlertAction(title: "Beehive", style: .default) { _ in
+      self.gridView.useExamplePattern(pattern: .beehive)
     })
     alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
     present(alertController, animated: true, completion: nil)
@@ -149,7 +149,7 @@ class GameViewController: UIViewController {
 }
 
 @available(iOS 14.0, *)
-extension GameViewController: GameStatsDelegate {
+extension GameViewController: GameEngineDelegate {
   func didUpdateGeneration() {
     generationLabel.text = "\(gridView.gameGrid.generation)"
   }

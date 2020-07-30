@@ -3,7 +3,7 @@ public enum Patterns {
   case random
   
   // Still Lifes
-  case behive
+  case beehive
   
   // Oscillators
   case blinker

@@ -19,10 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMk-9c-VRi" customClass="GridView" customModule="GameOfLife" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="u5G-of-t1F"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="64" width="374" height="294.33333333333331"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-t5-xCA">
                                 <rect key="frame" x="0.0" y="676" width="414" height="44"/>
@@ -57,7 +54,7 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-9J-sgQ">
-                                <rect key="frame" x="16" y="484" width="382" height="140"/>
+                                <rect key="frame" x="16" y="378.33333333333331" width="382" height="139.99999999999994"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORR-Yh-EUv">
                                         <rect key="frame" x="139" y="0.0" width="104.33333333333331" height="35"/>
@@ -89,7 +86,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-M0-rbO">
-                                <rect key="frame" x="16" y="640" width="382" height="73"/>
+                                <rect key="frame" x="16" y="534.33333333333337" width="382" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-BE-EoM">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -111,6 +108,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Vw-M0-rbO" secondAttribute="trailing" constant="16" id="45V-18-Goc"/>
                             <constraint firstItem="3Vw-M0-rbO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8eW-tc-eCe"/>
+                            <constraint firstItem="ZMk-9c-VRi" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="A3T-Dt-EqG"/>
                             <constraint firstItem="ZMk-9c-VRi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="IzH-OQ-UKJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6b-9J-sgQ" secondAttribute="trailing" constant="16" id="Nzq-mc-fEP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMk-9c-VRi" secondAttribute="trailing" constant="20" id="PUl-Fu-L1C"/>

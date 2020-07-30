@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol GameStatsDelegate: AnyObject {
+protocol GameEngineDelegate: AnyObject {
   func didUpdateGeneration()
   func didUpdatePopulation()
   func didUpdateGrid()

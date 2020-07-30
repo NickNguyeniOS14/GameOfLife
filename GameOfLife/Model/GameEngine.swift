@@ -9,15 +9,14 @@ import UIKit
 
 class GameEngine: NSObject {
   
-  let gridSize: Int
-  var cells: [Cell] = []
-  weak var delegate: GameStatsDelegate?
-  var generation: Int = 0
+  private(set) var gridSize: Int
+  private(set) var cells: [Cell] = []
+  weak var delegate: GameEngineDelegate?
+  private(set) var generation: Int = 0
   var population: Int { return cells.filter { $0.state == .alive }.count }
   
   public init(gridSize: Int) {
     self.gridSize = gridSize
-    
     
     for y in 0..<self.gridSize {
       for x in 0..<self.gridSize {
@@ -129,7 +128,7 @@ class GameEngine: NSObject {
         cellAt(x: 4, y: 4).state = .alive
         cellAt(x: 3, y: 4).state = .alive
         cellAt(x: 2, y: 4).state = .alive
-      case .behive:
+      case .beehive:
         cellAt(x: 3, y: 2).state = .alive
         cellAt(x: 4, y: 2).state = .alive
         
@@ -170,7 +169,7 @@ class GameEngine: NSObject {
     
   }
   
-  func cellCoordinates(at index: Int) -> (x: Int, y: Int) {
+  private func cellCoordinates(at index: Int) -> (x: Int, y: Int) {
     var y = 0
     var x = 0
     
