@@ -11,7 +11,7 @@ In the Game of Life, these rules examine each cell of the grid. For each cell, i
 - If the cell is alive and has 2 or 3 neighbors, then it remains alive. Else it dies.
 - If the cell is dead and has exactly 3 neighbors, then it comes to life. Else if remains dead.
 
-# Visualization:
+# Screenshots:
 
 <img src="https://user-images.githubusercontent.com/50033125/89102016-4062d300-d3d3-11ea-8a74-bb929394e7d4.png" width="250"> <img src="https://user-images.githubusercontent.com/50033125/89102026-57a1c080-d3d3-11ea-9904-338abd4fb17a.png" width="250"/> <img src="https://user-images.githubusercontent.com/50033125/89102043-7607bc00-d3d3-11ea-8488-2b7794197e9e.png" width="250"/> <img src="https://user-images.githubusercontent.com/50033125/89102047-8324ab00-d3d3-11ea-9e8b-0923e4153d7f.png" width="250"/> 
 
